@@ -1,7 +1,7 @@
 html {
     /* CSS HEX */
     --black: #000000ff;
-    --eerie-black: #1f1f1fff;
+    --eerie-black: rgb(46, 46, 46);
     --cultured: #f5f5f5ff;
     --celadon-blue: #247ba0ff;
     --orange-soda: #f06543ff;
