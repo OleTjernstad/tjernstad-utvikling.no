@@ -18,7 +18,15 @@ export const PostLayout = ({ children }: layoutProps) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <HeaderNavBar />
-            <main>{children}</main>
+            <main
+                style={{
+                    paddingRight: 50,
+                    paddingLeft: 50,
+                    backgroundColor: 'black'
+                }}
+            >
+                {children}
+            </main>
             <Footer />
         </div>
     );

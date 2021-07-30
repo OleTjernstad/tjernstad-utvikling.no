@@ -16,7 +16,6 @@ export default function Project({ project }: ProjectProps) {
     return (
         <PostLayout>
             <article className={styles.project}>
-                <h1>{project.title}</h1>
                 <figure>
                     <Image
                         layout="responsive"
@@ -25,6 +24,7 @@ export default function Project({ project }: ProjectProps) {
                     />
                     <figcaption>- {project.mainImage.caption}</figcaption>
                 </figure>
+                <h1>{project.title}</h1>
                 <div className={styles.body}>
                     <BlockContent
                         blocks={project.body}
