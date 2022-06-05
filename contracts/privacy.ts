@@ -1,26 +1,20 @@
 import { blockType } from './base';
 
-export interface ProjectInterface {
+export interface PrivacyPolicyInterface {
     _id: string;
 
     author: string;
     body: Array<any>;
-    mainImage: mainImage;
+    logo: logoImage;
     publishedAt: string;
     slug: string;
     title: string;
-    technologies: Array<string>;
 }
 
-export enum documentType {
-    project = 'project'
-}
-
-export interface mainImage {
+export interface logoImage {
     _type: blockType.image;
     asset: {
         _ref: string;
         _type: blockType.reference;
     };
-    caption: string;
 }

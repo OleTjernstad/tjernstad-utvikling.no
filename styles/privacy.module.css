@@ -1,0 +1,33 @@
+.privacy {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.privacy h1 {
+    text-align: center;
+    font-size: 2.9rem;
+}
+
+.privacyAppLogo {
+    display: flex;
+    justify-content: center;
+}
+
+
+.text {
+    flex: 0 0 980px;
+    max-width: 980px;
+}
+
+
+@media (max-width: 700px) {
+    .privacy h1 {
+        font-size: max(4vw, 15px);
+    }
+
+    .text {
+        justify-items: center;
+        flex-direction: column;
+    }
+}
