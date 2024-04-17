@@ -2,17 +2,15 @@ import { getAllPosts, getSinglePost } from "@/utils/mdx";
 
 import { getMDXComponent } from "mdx-bundler/client";
 
-const POST_PATH = "src/app/posts/content";
-
 export async function generateStaticParams() {
-  const paths = getAllPosts(POST_PATH).map(({ slug }) => ({
+  const paths = getAllPosts().map(({ slug }) => ({
     params: { slug },
   }));
   return paths;
 }
 
 async function getPost({ slug }: { slug: string }) {
-  const post = await getSinglePost(POST_PATH, slug);
+  const post = await getSinglePost(slug);
   return post;
 }
 

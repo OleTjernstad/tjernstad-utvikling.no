@@ -4,12 +4,13 @@ import matter from "gray-matter";
 import path from "path";
 
 export const ROOT = process.cwd();
+export const POSTS_PATH = path.join(process.cwd(), "content/posts");
 
-export function getFileContent(post_path: string, filename: string) {
-  return fs.readFileSync(path.join(post_path, filename), "utf8");
-}
+export const getFileContent = (filename: string) => {
+  return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
+};
 
-async function getCompiledMDX(source: string) {
+const getCompiledMDX = async (source: string) => {
   if (process.platform === "win32") {
     process.env.ESBUILD_BINARY_PATH = path.join(
       ROOT,
@@ -49,28 +50,23 @@ async function getCompiledMDX(source: string) {
   } catch (error: any) {
     throw new Error(error);
   }
-}
+};
 
-export async function getSinglePost(subPath: string, slug: string) {
-  const POSTS_PATH = path.join(process.cwd(), subPath);
-
-  const source = getFileContent(POSTS_PATH, `${slug}.mdx`);
+export const getSinglePost = async (slug: string) => {
+  const source = getFileContent(`${slug}.mdx`);
   const { code, frontmatter } = await getCompiledMDX(source);
 
   return {
     frontmatter,
     code,
   };
-}
-
-export function getAllPosts(subPath: string) {
-  const POSTS_PATH = path.join(process.cwd(), subPath);
-
+};
+export const getAllPosts = () => {
   return fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))
     .map((fileName) => {
-      const source = getFileContent(POSTS_PATH, fileName);
+      const source = getFileContent(fileName);
       const slug = fileName.replace(/\.mdx?$/, "");
       const { data } = matter(source);
 
@@ -79,4 +75,4 @@ export function getAllPosts(subPath: string) {
         slug: slug,
       };
     });
-}
+};
