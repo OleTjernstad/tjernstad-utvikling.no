@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export const getPost = cache(async (slug: string) => {
+const getPost = cache(async (slug: string) => {
   const post = await getSinglePost(slug);
   return post;
 });
