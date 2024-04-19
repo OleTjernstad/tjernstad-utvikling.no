@@ -1,0 +1,8 @@
+@layer layout {
+    main {
+        display: grid;
+        place-content: center;
+    }
+  
+
+}
