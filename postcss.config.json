@@ -8,7 +8,6 @@
         },
         "stage": 3,
         "features": {
-          "custom-properties": false,
           "nesting-rules": true,
           "custom-media-queries": true,
           "media-query-ranges": true,
