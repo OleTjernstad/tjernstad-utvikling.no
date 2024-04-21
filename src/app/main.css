@@ -1,0 +1,6 @@
+@layer layout {
+  .section-me {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+  }
+}

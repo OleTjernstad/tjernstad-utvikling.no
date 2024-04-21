@@ -22,9 +22,5 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   const Component = getMDXComponent(post.code);
 
-  return (
-    <div>
-      <Component />
-    </div>
-  );
+  return <Component />;
 }

@@ -1,168 +1,165 @@
 @layer base {
-   
-    html {
-        box-sizing: border-box;
-        -webkit-text-size-adjust: none;
+  html {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.4;
+    margin-block: 0.2em;
+    text-wrap: balance;
+    /* Markdown Links show on hover */
+    --opacity: 0;
+
+    &:hover {
+      --opacity: 1;
     }
 
-    h1,
+    a[href^="#"] {
+      display: inline-block;
+      height: 100%;
+      margin-left: 0.25rem;
+      opacity: var(--opacity);
+
+      &:before {
+        content: "#";
+      }
+    }
+  }
+
+  h1,
+  .h1 {
+    font-size: var(--font-size-xxxl);
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--font-size-xxl);
+    /* font-weight: 700; */
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--font-size-xl);
+    /* font-weight: 700; */
+  }
+
+  h4,
+  .h4 {
+    font-size: var(--font-size-lg);
+    /* font-weight: 400; */
+  }
+
+  h5,
+  .h5 {
+    font-size: var(--font-size-md);
+  }
+
+  .h6,
+  h6,
+  p,
+  li {
+    font-size: var(--font-size-base);
+  }
+
+  /* Posts Typography - coming from markdown so it must be global */
+  .posts {
     h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: 700;
-        letter-spacing: -0.04em;
-        line-height: 1.4;
-        margin-block: 0.2em;
-        text-wrap: balance;
-        /* Markdown Links show on hover */
-        --opacity: 0;
-
-        &:hover {
-            --opacity: 1;
-        }
-
-        a[href^='#'] {
-            display: inline-block;
-            height: 100%;
-            margin-left: 0.25rem;
-            opacity: var(--opacity);
-
-            &:before {
-                content: '#';
-            }
-        }
-    }
-
-    h1,
-    .h1 {
-        font-size: var(--font-size-xxxl);
-    }
-
-    h2,
-    .h2 {
-        font-size: var(--font-size-xxl);
-        /* font-weight: 700; */
-    }
-
-    h3,
-    .h3 {
-        font-size: var(--font-size-xl);
-        /* font-weight: 700; */
-    }
-
-    h4,
-    .h4 {
-        font-size: var(--font-size-lg);
-        /* font-weight: 400; */
-    }
-
-    h5,
-    .h5 {
-        font-size: var(--font-size-md);
-    }
-
-    .h6,
-    h6,
-    p,
-    li {
-        font-size: var(--font-size-base);
-    }
-
-
-    /* Posts Typography - coming from markdown so it must be global */
-    .posts {
-
-        h2,
-        h3 {
-            font-size: var(--font-size-lg);
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-    }
-
-    html {
-        font-family: 'MDIO';
-    }
-
-    body {
-        padding: 0;
-        margin: 0;
-        background: var(--bg);
-    }
-
-    a,
-    .a {
-        color: var(--link-fg, var(--fg));
-        text-decoration: none;
-    }
-
-    a:hover {
-        cursor: pointer;
-    }
-
-    :is(p, li) a,
-    .a {
-        color: var(--color-sheet);
-        text-decoration: underline;
-        text-decoration-color: var(--primary);
-        text-decoration-thickness: 1.5px;
-    }
-
-    p {
-        line-height: 1.7;
+    h3 {
+      font-size: var(--font-size-lg);
     }
 
     ul {
-        @media (--below_med) {
-            padding: 0;
-        }
+      padding-left: 20px;
     }
+  }
 
-    li {
-        line-height: 2.2;
-        list-style-type: circle;
+  html {
+    font-family: var(--body-font-family);
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    background: var(--bg);
+    color: var(--blackish);
+  }
+
+  a,
+  .a {
+    color: var(--link-fg, var(--fg));
+    text-decoration: none;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  :is(p, li) a,
+  .a {
+    color: var(--color-sheet);
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    text-decoration-thickness: 1.5px;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  ul {
+    @media (--below_med) {
+      padding: 0;
     }
+  }
 
-    ol li {
-        list-style-type: decimal;
+  li {
+    line-height: 2.2;
+    list-style-type: circle;
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  a[href^="#t="] {
+    background: var(--bg-1);
+    padding: 4px 6px;
+    border-bottom: none;
+    text-decoration: none;
+    color: var(--color-2);
+    font-weight: normal;
+    border-radius: 4px;
+    position: relative;
+    font-size: var(--font-size-sm);
+    font-weight: 900;
+
+    @media (--above_med) {
+      left: -17px;
     }
+  }
 
-    a[href^='#t='] {
-        background: var(--bg-1);
-        padding: 4px 6px;
-        border-bottom: none;
-        text-decoration: none;
-        color: var(--color-2);
-        font-weight: normal;
-        border-radius: 4px;
-        position: relative;
-        font-size: var(--font-size-sm);
-        font-weight: 900;
-
-        @media (--above_med) {
-            left: -17px;
-        }
-    }
-
-
-/* All External Links (links starting with http(s)) */
-a[href^='http']:not(.social-icon, .button, .icon, .naked)::after {
-    content: '↗';
+  /* All External Links (links starting with http(s)) */
+  a[href^="http"]:not(.social-icon, .button, .icon, .naked)::after {
+    content: "↗";
     margin-left: 4px;
     font-size: 12px;
-}
+  }
 
-/* Selection */
-::selection {
+  /* Selection */
+  ::selection {
     background: var(--primary);
     color: var(--dark);
-}
+  }
 
-.visually-hidden {
+  .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -172,14 +169,13 @@ a[href^='http']:not(.social-icon, .button, .icon, .naked)::after {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
-}
+  }
 
-/* Scrollbars */
-html {
+  /* Scrollbars */
+  html {
     --track: var(--black);
     --thumb: var(--primary);
     scrollbar-color: var(--thumb) var(--track);
     scrollbar-width: thin;
-}
-
+  }
 }

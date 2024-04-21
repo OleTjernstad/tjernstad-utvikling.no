@@ -15,10 +15,13 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body>
-        <main className="layout">
-          <div />
-          <div className="content">{children}</div>
-        </main>
+        <header className="header top-image">
+          <div>
+            <span>Tjernstad Utvikling</span>
+          </div>
+          <div></div>
+        </header>
+        {children}
       </body>
     </html>
   );
