@@ -1,6 +1,24 @@
 @layer layout {
-  .section-me {
+  .main-layout {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    justify-items: center;
+  }
+  .section-me {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: [image] 300px [content] minmax(0, 812px);
+
+    .me {
+      background: var(--bg-1);
+      display: grid;
+      padding: 10px;
+      padding-left: 20px;
+    }
+
+    .greet {
+      font-size: var(--font-size-xl);
+      font-family: var(--heading-font-family);
+      text-align: center;
+    }
   }
 }
