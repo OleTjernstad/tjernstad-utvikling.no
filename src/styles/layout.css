@@ -26,4 +26,18 @@
     background-size: cover;
     background-position: center;
   }
+
+  footer {
+    margin-top: 20px;
+    display: flex;
+    border: 2px solid purple;
+    padding: 15px;
+    justify-content: space-around;
+    border-top-width: 3px;
+    border-style: solid;
+
+    .co-name {
+      font-size: var(--font-size-xs);
+    }
+  }
 }

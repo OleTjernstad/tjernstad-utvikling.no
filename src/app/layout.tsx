@@ -23,6 +23,20 @@ export default function RootLayout({
           <div></div>
         </header>
         {children}
+        <footer>
+          <address>
+            <span> Tjernstad Utvikling </span> <br />
+            <span className="co-name">C/O Ole Tjernstad</span>
+            <br />
+            <br />
+            Sandervegen 590
+            <br /> 2116 Sander
+          </address>
+          <address>
+            Tlf: 483 13 283 <br />
+            <br /> Org. nr. 924 359 595
+          </address>
+        </footer>
       </body>
     </html>
   );
