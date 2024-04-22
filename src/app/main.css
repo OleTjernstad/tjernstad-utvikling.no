@@ -1,19 +1,18 @@
 @layer layout {
   .main-layout {
     display: grid;
-    justify-items: center;
+    place-content: center;
+    grid-template-columns: [start] 5px [content-start] 1fr [content-end] 5px [end];
 
     .title {
       font-size: var(--font-size-xl);
       font-family: var(--heading-font-family);
     }
-    section {
-      margin-top: 30px;
-    }
   }
   .section-me {
     margin-top: 20px;
     display: grid;
+    justify-content: center;
     grid-template-columns: [image] 300px [content] minmax(0, 812px);
 
     .me {
@@ -28,6 +27,25 @@
       font-family: var(--heading-font-family);
       text-align: center;
       font-weight: 600;
+    }
+  }
+
+  article {
+    border: 2px solid red;
+  }
+
+  section {
+    margin-top: 30px;
+    background: var(--bg-2);
+
+    .post-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1rem;
+      justify-content: space-evenly;
+    }
+    .title {
+      text-align: center;
     }
   }
 }
