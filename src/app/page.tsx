@@ -35,9 +35,18 @@ export default function Home() {
             Videre her vil jeg vise frem noen av prosjektene jeg har jobbet med.
           </p>
           <p>
+            Til vanlig er jeg elsikkerhetsingeniør med fagbrev som elektriker
+            utvidet med fagskoleingeniør elektro.
+          </p>
+          <p>
             Og viktigst, jeg er også pappa til ei nydelig jente, bare se selv!!
           </p>
         </div>
+      </section>
+
+      {/* projects */}
+      <section>
+        <h2 className="title">Prosjekter</h2>
       </section>
     </main>
   );
