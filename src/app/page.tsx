@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import "./main.css";
 
 import Image from "next/image";
@@ -69,7 +68,9 @@ export default async function Home() {
                 <Link href={`projects/${project.slug}`} key={project.slug}>
                   <article>
                     <div className="image-wrapper">
-                      <img
+                      <Image
+                        width={200}
+                        height={200}
                         className="image"
                         src={`/images/projects/${project.frontmatter.image}`}
                         alt={`illustrasjonsbilde av ${project.frontmatter.title}`}
