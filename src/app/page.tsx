@@ -1,8 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import "./main.css";
 
 import Image from "next/image";
+import Link from "next/link";
+import { getAllProjects } from "@/utils/project-mdx";
 
-export default function Home() {
+async function getProjects() {
+  const projects = getAllProjects();
+
+  return projects;
+}
+
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
     <main className="main-layout">
       <div></div>
@@ -52,30 +63,22 @@ export default function Home() {
         <section>
           <h2 className="title">Prosjekter</h2>
           <div className="post-wrapper">
-            <article>
-              <Image
-                src="/images/sluttkontroll.webp"
-                layout="responsive"
-                width="375"
-                height="500"
-                alt="sluttkontroll prosjekt"
-              />
-              <h3>Sluttkontroll.no</h3>
-
-              <p>Kort om prosjektet her</p>
-            </article>
-            <article>
-              <Image
-                src="/images/sluttkontroll.webp"
-                layout="responsive"
-                width="375"
-                height="500"
-                alt="sluttkontroll prosjekt"
-              />
-              <h3>Sluttkontroll.no</h3>
-
-              <p>Kort om prosjektet her</p>
-            </article>
+            {projects
+              .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+              .map((project) => (
+                <Link href={`projects/${project.slug}`} key={project.slug}>
+                  <article>
+                    <div className="image-wrapper">
+                      <img
+                        className="image"
+                        src={`/images/projects/${project.frontmatter.image}`}
+                        alt={`illustrasjonsbilde av ${project.frontmatter.title}`}
+                      />
+                    </div>
+                    <h3>{project.frontmatter.title}</h3>
+                  </article>
+                </Link>
+              ))}
           </div>
         </section>
       </div>
