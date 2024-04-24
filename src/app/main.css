@@ -2,7 +2,7 @@
   .main-layout {
     display: grid;
     place-content: center;
-    grid-template-columns: [start] 20px [content-start] 1fr [content-end] 20px [end];
+    grid-template-columns: [start] 40px [content-start] 1fr [content-end] 40px [end];
 
     .title {
       font-size: var(--font-size-xl);

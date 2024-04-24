@@ -18,7 +18,7 @@ export default async function Home() {
       <div></div>
       <div>
         {/* me */}
-        <section className="section-me">
+        <section className="section-me tear">
           <div className="image-wrapper">
             <Image
               className="image"

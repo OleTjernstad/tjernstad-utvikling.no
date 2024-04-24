@@ -1,0 +1,32 @@
+@layer Layout {
+  .tear {
+    --tear-width: 300px;
+    --tear-height: 10px;
+    position: relative;
+    color: black;
+    background: var(--bg-2);
+  }
+
+  .tear::before,
+  .tear::after {
+    content: "";
+    position: absolute;
+    background: var(--bg);
+
+    width: 100%;
+    height: 10px;
+    -webkit-mask-image: url(/images/tear.svg);
+    -webkit-mask-size: var(--tear-width) var(--tear-height);
+
+    mask-image: url(/images/tear.svg);
+    mask-size: var(--tear-width) var(--tear-height);
+  }
+
+  .tear::before {
+    top: 0;
+  }
+  .tear::after {
+    bottom: 0;
+    transform: rotate(0.5turn);
+  }
+}
