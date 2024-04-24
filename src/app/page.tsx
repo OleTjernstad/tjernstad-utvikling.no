@@ -19,11 +19,11 @@ export default async function Home() {
       <div>
         {/* me */}
         <section className="section-me">
-          <div className="image">
+          <div className="image-wrapper">
             <Image
+              className="image"
               src="/images/me.webp"
-              layout="responsive"
-              width="375"
+              width="500"
               height="500"
               alt="Min datter og meg"
             />

@@ -7,27 +7,37 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg307"
+   sodipodi:docname="bg.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs304">
-    <filter
-       style="color-interpolation-filters:sRGB"
-       id="filter3008"
-       x="-0.026243776"
-       y="-0.017351784"
-       width="1.0524836"
-       height="1.0347022">
-      <feGaussianBlur
-         stdDeviation="0.99480483"
-         id="feGaussianBlur3010" />
-    </filter>
-  </defs>
-  <g
-     id="layer1">
-    <path
-       style="fill:none;stroke:#ffc301;stroke-width:6.20785;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.7;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke;filter:url(#filter3008)"
-       d="M 2.3836945,-8.2948543 186.80562,81.537384 25.436436,241.06706 211.63166,308.18308 18.93438,106.83496 172.61932,0.48185836"
-       id="path486" />
-  </g>
+     id="defs151" />
+  <sodipodi:namedview
+     id="namedview149"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.7180275"
+     inkscape:cx="397.61708"
+     inkscape:cy="115.59446"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg307" />
+  <path
+     style="fill:none;stroke:#ffc301;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;paint-order:fill markers stroke"
+     d="M -45.692308,4.0533499 306.94913,60.431763 -82.540942,152.55335 308.42308,206.35236 -39.059553,283.73448"
+     id="path365"
+     sodipodi:nodetypes="ccccc" />
 </svg>
