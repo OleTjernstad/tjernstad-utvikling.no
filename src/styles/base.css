@@ -11,6 +11,7 @@
   h5,
   h6 {
     font-weight: 700;
+    font-family: var(--heading-font-family);
     letter-spacing: -0.04em;
     line-height: 1.4;
     margin-block: 0.2em;

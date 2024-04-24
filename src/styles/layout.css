@@ -6,13 +6,14 @@
 
     @media (width > 700px) {
       grid-template-columns:
-        [start l-margin] 10px [l-margin content main] minmax(0, 812px)
-        [content-end r-margin] 10px [r-margin end];
+        [start] 10px [content-start main] minmax(0, 812px)
+        [content-end r-margin] 10px [ end];
     }
   }
 
   .content {
-    display: grid;
+    grid-column-start: content-start;
+    min-height: calc(100vh - 390px);
   }
 
   .header {
@@ -30,11 +31,8 @@
   footer {
     margin-top: 20px;
     display: flex;
-    border: 2px solid purple;
     padding: 15px;
     justify-content: space-around;
-    border-top-width: 3px;
-    border-style: solid;
 
     .co-name {
       font-size: var(--font-size-xs);
