@@ -18,43 +18,45 @@ export default async function Home() {
       <div></div>
       <div>
         {/* me */}
-        <section className="section-me tear">
-          <div className="image-wrapper">
-            <Image
-              className="image"
-              src="/images/me.webp"
-              width="500"
-              height="500"
-              alt="Min datter og meg"
-            />
-          </div>
-          <div className="me">
-            <p className="greet">Hei !!</p>
-            <p>
-              Jeg heter Ole Tjernstad, innehaver av Tjernstad Utvikling og
-              selvlært hobby utvikler. I tillegg til egen lesing har jeg
-              fullført og bestått et javascript kurs ved{" "}
-              <a
-                href="https://teamtreehouse.com/techdegree/full-stack-javascript"
-                rel="nofollow"
-                target="_blank"
-              >
-                treehouse
-              </a>
-              .
-            </p>
-            <p>
-              Videre her vil jeg vise frem noen av prosjektene jeg har jobbet
-              med.
-            </p>
-            <p>
-              Til vanlig er jeg elsikkerhetsingeniør med fagbrev som elektriker
-              utvidet med fagskoleingeniør elektro.
-            </p>
-            <p>
-              Og viktigst, jeg er også pappa til ei nydelig jente, bare se
-              selv!!
-            </p>
+        <section>
+          <div className="section-me tear">
+            <div className="image-wrapper">
+              <Image
+                className="image"
+                src="/images/me.webp"
+                width="500"
+                height="500"
+                alt="Min datter og meg"
+              />
+            </div>
+            <article className="me">
+              <p className="greet">Hei !!</p>
+              <p>
+                Jeg heter Ole Tjernstad, innehaver av Tjernstad Utvikling og
+                selvlært hobby utvikler. I tillegg til egen lesing har jeg
+                fullført og bestått et javascript kurs ved{" "}
+                <a
+                  href="https://teamtreehouse.com/techdegree/full-stack-javascript"
+                  rel="nofollow"
+                  target="_blank"
+                >
+                  treehouse
+                </a>
+                .
+              </p>
+              <p>
+                Videre her vil jeg vise frem noen av prosjektene jeg har jobbet
+                med.
+              </p>
+              <p>
+                Til vanlig er jeg elsikkerhetsingeniør med fagbrev som
+                elektriker utvidet med fagskoleingeniør elektro.
+              </p>
+              <p>
+                Og viktigst, jeg er også pappa til ei nydelig jente, bare se
+                selv!!
+              </p>
+            </article>
           </div>
         </section>
 

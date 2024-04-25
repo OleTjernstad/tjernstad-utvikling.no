@@ -1,7 +1,7 @@
 @layer layout {
   .main-layout {
     display: grid;
-    place-content: center;
+
     grid-template-columns: [start] 40px [content-start] 1fr [content-end] 40px [end];
 
     .title {
@@ -10,10 +10,17 @@
     }
   }
 
+  section:has(.me) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
   .section-me {
     margin-top: 20px;
     display: grid;
     justify-content: center;
+    max-width: calc(812px + 300px);
 
     .image-wrapper {
       .image {
@@ -57,26 +64,6 @@
     }
   }
 
-  article {
-    transition: all 0.5s ease-in-out;
-
-    cursor: pointer;
-
-    .image-wrapper {
-      aspect-ratio: 16 / 9;
-      .image {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &:hover {
-      transform: scale(1.05);
-      filter: brightness(0.8);
-    }
-  }
-
   section {
     margin-top: 30px;
 
@@ -95,6 +82,26 @@
     }
     .title {
       text-align: center;
+    }
+  }
+
+  article:not(.me) {
+    transition: all 0.5s ease-in-out;
+
+    cursor: pointer;
+
+    .image-wrapper {
+      aspect-ratio: 16 / 9;
+      .image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(0.8);
     }
   }
 }

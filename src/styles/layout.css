@@ -13,16 +13,17 @@
 
   .content {
     grid-column-start: content-start;
-    min-height: calc(100vh - 390px);
+    min-height: calc(100vh - var(--header-height) - 180px);
   }
 
   .header {
-    height: 200px;
+    height: var(--header-height);
     margin-bottom: 10px;
+    background: var(--bg-2);
   }
 
   .top-image {
-    background-image: url(/images/header-image.webp);
+    background-image: url(/images/header.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -33,6 +34,12 @@
     display: flex;
     padding: 15px;
     justify-content: space-around;
+    color: var(--fg-footer);
+    background-color: var(--bg-footer);
+    background-image: url(/images/footer.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 
     .co-name {
       font-size: var(--font-size-xs);

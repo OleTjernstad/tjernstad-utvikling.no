@@ -21,7 +21,7 @@
   --yellow-8: oklch(25% 0.173 var(--yellow-hue));
   --yellow: var(--yellow-3);
 
-  /* --teal: #03fff3; */
+  /* --teal: #283D3B; */
   --teal-hue: 188.55;
   --teal-1: oklch(99% 0.05 var(--teal-hue));
   --teal-2: oklch(95% 0.08 var(--teal-hue));
@@ -127,6 +127,7 @@
   --bg-1: var(--black-1);
   --bg-2: var(--black-2);
   --bg-sheet: var(--white);
+  --bg-footer: var(--teal-7);
 
   /* Foreground */
   --fg: var(--white);
@@ -135,6 +136,7 @@
   --fg-2: var(--black-9);
   /* currently unused */
   --fg-sheet: var(--black);
+  --fg-footer: var(--white-2);
 
   /* Interface Color */
   --primary: var(--yellow);
@@ -150,4 +152,6 @@
   --brad: 5px;
   --border-size: 1.5px;
   --border: solid var(--border-size) var(--fg-sheet);
+
+  --header-height: 20rem;
 }
