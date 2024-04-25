@@ -14,7 +14,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className="main-layout">
+    <main className="main-layout front-page">
       <div></div>
       <div>
         {/* me */}
