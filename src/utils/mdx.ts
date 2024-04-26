@@ -10,7 +10,7 @@ export const getFileContent = (filename: string) => {
   return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
 };
 
-const getCompiledMDX = async (source: string) => {
+export async function getCompiledMDX(source: string) {
   if (process.platform === "win32") {
     process.env.ESBUILD_BINARY_PATH = path.join(
       ROOT,
@@ -50,7 +50,7 @@ const getCompiledMDX = async (source: string) => {
   } catch (error: any) {
     throw new Error(error);
   }
-};
+}
 
 export const getSinglePost = async (slug: string) => {
   const source = getFileContent(`${slug}.mdx`);
