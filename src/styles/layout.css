@@ -17,9 +17,13 @@
   }
 
   .header {
-    height: var(--header-height);
+    height: var(--header-height-sm);
     margin-bottom: 10px;
     background: var(--bg-2);
+
+    @media (width > 700px) {
+      height: var(--header-height-lg);
+    }
   }
 
   .top-image {

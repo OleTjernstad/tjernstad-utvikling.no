@@ -153,5 +153,6 @@
   --border-size: 1.5px;
   --border: solid var(--border-size) var(--fg-sheet);
 
-  --header-height: 20rem;
+  --header-height-lg: 20rem;
+  --header-height-sm: 10rem;
 }
