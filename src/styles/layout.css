@@ -40,10 +40,10 @@
     justify-content: space-around;
     color: var(--fg-footer);
     background-color: var(--bg-footer);
-    background-image: url(/images/footer.svg);
+    /* background-image: url(/images/footer.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: center; */
 
     .co-name {
       font-size: var(--font-size-xs);
