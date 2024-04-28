@@ -1,5 +1,6 @@
 import "./main.css";
 
+import { Icon } from "@/components/icon";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllProjects } from "@/utils/project-mdx";
@@ -78,6 +79,12 @@ export default async function Home() {
                         alt={`illustrasjonsbilde av ${project.frontmatter.title}`}
                       />
                     </div>
+                    <div className="tech-icons">
+                      {project.frontmatter?.lang?.map((lang: string) => (
+                        <Icon name={lang} key={lang} />
+                      ))}
+                    </div>
+
                     <h3>{project.frontmatter.title}</h3>
                   </article>
                 </Link>
