@@ -36,9 +36,15 @@
   header::after {
     content: "";
     background-image: url(/images/header.svg);
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background: linear-gradient(
+      0deg,
+      rgba(20, 124, 151, 1) 0%,
+      rgba(243, 230, 251, 0) 99%
+    );
     position: absolute;
     top: 0;
     height: 100%;
