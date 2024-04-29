@@ -16,12 +16,6 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body>
-        <header className="header top-image">
-          <div>
-            <span>Tjernstad Utvikling</span>
-          </div>
-          <div></div>
-        </header>
         {children}
         <footer>
           <address>

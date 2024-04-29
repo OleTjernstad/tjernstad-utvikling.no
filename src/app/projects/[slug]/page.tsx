@@ -1,5 +1,6 @@
 import { getAllProjects, getSingleProject } from "@/utils/project-mdx";
 
+import { Header } from "@/components/header";
 import { cache } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 
@@ -22,9 +23,19 @@ export default async function Project({
 }: {
   params: { slug: string };
 }) {
-  const post = await getProject(params.slug);
+  const project = await getProject(params.slug);
 
-  const Component = getMDXComponent(post.code);
+  const Component = getMDXComponent(project.code);
 
-  return <Component />;
+  return (
+    <>
+      <Header imageName={project.frontmatter.image} path="/images/projects/" />
+      <main className="layout">
+        <div className="content">
+          <h2>{project.frontmatter?.title}</h2>
+          <Component />
+        </div>
+      </main>
+    </>
+  );
 }

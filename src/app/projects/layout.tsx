@@ -12,10 +12,8 @@ export default function PostsLayout({
 }>) {
   return (
     <>
-      <main className="layout">
-        <div />
-        <div className="content">{children}</div>
-      </main>
+      <div />
+      {children}
     </>
   );
 }
