@@ -87,7 +87,7 @@ export default async function Home() {
                         </div>
                         <div className="tech-icons">
                           {tech?.slice(0, 4).map((lang: string) => (
-                            <Icon name={lang} key={lang} />
+                            <Icon name={lang} key={lang} showName />
                           ))}
                         </div>
 

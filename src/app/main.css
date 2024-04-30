@@ -109,6 +109,17 @@
       flex-direction: row;
       gap: 0.5rem;
       margin-top: 0.4rem;
+
+      .tech-icon {
+        .icon-name {
+          display: none;
+        }
+        &:hover {
+          .icon-name {
+            display: block;
+          }
+        }
+      }
     }
   }
 }
