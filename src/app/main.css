@@ -89,6 +89,7 @@
     transition: all 0.5s ease-in-out;
 
     cursor: pointer;
+    color: var(--blackish);
 
     .image-wrapper {
       aspect-ratio: 16 / 9;
@@ -110,7 +111,7 @@
       gap: 0.5rem;
       margin-top: 0.4rem;
 
-      .tech-icon {
+      /* .tech-icon {
         .icon-name {
           display: none;
         }
@@ -119,7 +120,7 @@
             display: block;
           }
         }
-      }
+      } */
     }
   }
 }

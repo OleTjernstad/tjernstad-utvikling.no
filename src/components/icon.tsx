@@ -7,9 +7,9 @@ interface IconProps {
 export function Icon({ name, showName }: IconProps) {
   const nme = name.toLowerCase();
   return (
-    <div className="tech-icon">
+    <div className={`tech-icon ${showName && "tooltip"}`} data-text={name}>
       <Image src={`/icons/${nme}.svg`} alt="" width={20} height={20} />
-      {showName ? <span className="icon-name">{name}</span> : null}
+      {/* {showName ? <span className="icon-name">{}</span> : null} */}
     </div>
   );
 }
