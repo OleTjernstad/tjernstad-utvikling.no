@@ -110,17 +110,15 @@
       flex-direction: row;
       gap: 0.5rem;
       margin-top: 0.4rem;
+    }
+  }
 
-      /* .tech-icon {
-        .icon-name {
-          display: none;
-        }
-        &:hover {
-          .icon-name {
-            display: block;
-          }
-        }
-      } */
+  article.project {
+    background: #f2fff3;
+    border-radius: 5px;
+
+    .text-wrapper {
+      padding: 10px;
     }
   }
 }
