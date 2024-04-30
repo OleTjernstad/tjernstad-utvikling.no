@@ -6,14 +6,27 @@
 
     @media (width > 700px) {
       grid-template-columns:
-        [start] 10px [content-start main] minmax(0, 812px)
-        [content-end r-margin] 10px [ end];
+        [start] 1fr [content-start main] minmax(0, 812px)
+        [content-end sidebar] 1fr [ end];
     }
   }
 
   .content {
     grid-column-start: content-start;
     min-height: calc(100vh - var(--header-height) - 180px);
+  }
+  .sidebar {
+    grid-column-start: sidebar;
+    /* margin-top: var(--font-size-xxl); */
+    h2 {
+      font-size: var(--font-size-md);
+    }
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.4rem;
+    }
   }
 
   header {
@@ -40,11 +53,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background: linear-gradient(
-      0deg,
-      rgba(20, 124, 151, 1) 0%,
-      rgba(243, 230, 251, 0) 99%
-    );
+
     position: absolute;
     top: 0;
     height: 100%;

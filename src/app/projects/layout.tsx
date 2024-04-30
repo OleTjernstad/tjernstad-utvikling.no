@@ -10,10 +10,5 @@ export default function PostsLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <div />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

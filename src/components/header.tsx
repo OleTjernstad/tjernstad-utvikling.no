@@ -17,6 +17,7 @@ export function Header({ imageName, path }: HeaderProps) {
           alt=""
         />
       ) : null}
+
       <div>
         <span>Tjernstad Utvikling</span>
       </div>

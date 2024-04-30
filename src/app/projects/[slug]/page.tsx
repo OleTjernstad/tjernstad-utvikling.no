@@ -1,6 +1,7 @@
 import { getAllProjects, getSingleProject } from "@/utils/project-mdx";
 
 import { Header } from "@/components/header";
+import { Icon } from "@/components/icon";
 import { cache } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 
@@ -34,6 +35,17 @@ export default async function Project({
         <div className="content">
           <h2>{project.frontmatter?.title}</h2>
           <Component />
+        </div>
+        <div className="sidebar">
+          <h2>Teknologier</h2>
+
+          <ul>
+            {project.frontmatter?.lang?.map((lang: string) => (
+              <li key={lang}>
+                <Icon name={lang} key={lang} /> <span>{lang}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </main>
     </>
