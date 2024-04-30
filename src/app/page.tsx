@@ -5,6 +5,7 @@ import { Icon } from "@/components/icon";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllProjects } from "@/utils/project-mdx";
+import { shuffle } from "@/utils/suffle";
 
 async function getProjects() {
   const projects = getAllProjects();
@@ -70,28 +71,31 @@ export default async function Home() {
             <div className="post-wrapper">
               {projects
                 .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
-                .map((project) => (
-                  <Link href={`projects/${project.slug}`} key={project.slug}>
-                    <article>
-                      <div className="image-wrapper">
-                        <Image
-                          width={200}
-                          height={200}
-                          className="image"
-                          src={`/images/projects/${project.frontmatter.image}`}
-                          alt={`illustrasjonsbilde av ${project.frontmatter.title}`}
-                        />
-                      </div>
-                      <div className="tech-icons">
-                        {project.frontmatter?.lang?.map((lang: string) => (
-                          <Icon name={lang} key={lang} />
-                        ))}
-                      </div>
+                .map((project) => {
+                  const tech = shuffle(project.frontmatter?.lang);
+                  return (
+                    <Link href={`projects/${project.slug}`} key={project.slug}>
+                      <article>
+                        <div className="image-wrapper">
+                          <Image
+                            width={200}
+                            height={200}
+                            className="image"
+                            src={`/images/projects/${project.frontmatter.image}`}
+                            alt={`illustrasjonsbilde av ${project.frontmatter.title}`}
+                          />
+                        </div>
+                        <div className="tech-icons">
+                          {tech?.slice(0, 4).map((lang: string) => (
+                            <Icon name={lang} key={lang} />
+                          ))}
+                        </div>
 
-                      <h3>{project.frontmatter.title}</h3>
-                    </article>
-                  </Link>
-                ))}
+                        <h3>{project.frontmatter.title}</h3>
+                      </article>
+                    </Link>
+                  );
+                })}
             </div>
           </section>
         </div>
