@@ -9,26 +9,46 @@
     position: absolute;
     z-index: 10;
 
-    /* vertically center */
-    top: 50%;
-    transform: translateY(-50%);
+    top: -1.9rem;
+    transform: translateX(-1rem);
 
     /* move to right */
     left: 100%;
     margin-left: 15px; /* and add a small left margin */
 
     /* basic styles */
-    width: 200px;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 0.3rem;
+
+    white-space: nowrap;
     background: #000;
     color: #fff;
     text-align: center;
 
-    display: none; /* hide by default */
+    opacity: 0;
+    transition: 0.3s opacity;
   }
 
-  .tooltip:hover:before {
-    display: block;
+  .tooltip:after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+
+    top: -0.6rem;
+    transform: translateX(0rem);
+
+    transform: rotate(-45deg);
+
+    /* the arrow */
+    border: 15px solid var(--yellow);
+    border-radius: 90px;
+    border-color: transparent var(--yellow) transparent transparent;
+
+    opacity: 0;
+    transition: 0.3s opacity;
+  }
+
+  .tooltip:hover:before,
+  .tooltip:hover:after {
+    opacity: 1;
   }
 }
