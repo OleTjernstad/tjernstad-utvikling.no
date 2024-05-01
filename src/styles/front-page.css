@@ -96,7 +96,7 @@
       flex-direction: row;
       padding: 20px;
 
-      padding-left: 150px;
+      padding-left: 200px;
 
       -ms-overflow-style: none; /* for Internet Explorer, Edge */
       scrollbar-width: none; /*  for Firefox */
@@ -155,10 +155,8 @@
     }
   }
 
-  article.project {
-    .text-wrapper {
-      padding: 10px;
-    }
+  .text-wrapper {
+    padding: 10px;
   }
 
   .card-bg {

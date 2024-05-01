@@ -59,4 +59,17 @@
     transform: scale(1.05);
     filter: brightness(0.8);
   }
+
+  .card-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .gap-1 {
+    gap: 0.4rem;
+  }
 }

@@ -1,5 +1,10 @@
+import { DateIcon } from "@/icons/date";
+import { Icon } from "./icon";
 import Image from "next/image";
 import Link from "next/link";
+import { UpdateIcon } from "@/icons/update";
+import { format } from "date-fns";
+import { shuffle } from "@/utils/shuffle";
 
 interface PostCardProps {
   post: {
@@ -11,9 +16,9 @@ interface PostCardProps {
 }
 
 export function PostCard({ post }: PostCardProps) {
-  // const tech = shuffle(project.frontmatter?.lang);
+  const tech = shuffle(post.frontmatter?.tech ?? []);
   return (
-    <article className="post card-stack card-bg post-card">
+    <article className="post card-stack post-card">
       <Link href={`posts/${post.slug}`} className="">
         <div className="image-wrapper">
           <Image
@@ -24,14 +29,29 @@ export function PostCard({ post }: PostCardProps) {
             alt={`illustrasjonsbilde av ${post.frontmatter?.title}`}
           />
         </div>
-        <div className="text-wrapper">
-          {/* <div className="tech-icons">
-            {tech?.slice(0, 4).map((lang: string) => (
-              <Icon name={lang} key={lang} showName />
-            ))}
-          </div> */}
-
+        <div className="text-wrapper card-column">
+          <div className="flex-row gap-1">
+            <DateIcon />
+            {format(post.frontmatter?.date, "dd.MM.yyyy")}
+            {post.frontmatter?.update ? (
+              <>
+                <span className="flex-row">
+                  (<UpdateIcon />
+                  {format(post.frontmatter?.update, "dd.MM.yyyy")})
+                </span>
+              </>
+            ) : null}
+          </div>
           <h3>{post.frontmatter.title}</h3>
+          <div className="tech-icons">
+            {tech
+              ? tech
+                  ?.slice(0, 4)
+                  ?.map((tech: string) => (
+                    <Icon name={tech} key={tech} showName />
+                  ))
+              : null}
+          </div>
         </div>
       </Link>
     </article>
