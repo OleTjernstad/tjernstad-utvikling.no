@@ -17,7 +17,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`projects/${project.slug}`}>
       <article className="project">
-        <div className="image-wrapper">
+        <div className="image-wrapper image-gradient">
           <Image
             width={200}
             height={200}
