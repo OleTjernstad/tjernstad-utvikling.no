@@ -1,5 +1,7 @@
 import { getAllPosts, getSinglePost } from "@/utils/mdx";
 
+import { Header } from "@/components/header";
+import { Icon } from "@/components/icon";
 import { cache } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 
@@ -22,5 +24,26 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   const Component = getMDXComponent(post.code);
 
-  return <Component />;
+  return (
+    <>
+      <Header />
+      <main className="layout">
+        <div className="content">
+          <h2 className="title">{post.frontmatter?.title}</h2>
+          <Component />
+        </div>
+        <div className="sidebar">
+          <h2>Teknologier</h2>
+
+          <ul>
+            {post.frontmatter?.tech?.map((tech: string) => (
+              <li key={tech}>
+                <Icon name={tech} key={tech} /> <span>{tech}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </main>
+    </>
+  );
 }
