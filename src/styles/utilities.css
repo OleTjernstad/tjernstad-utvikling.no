@@ -51,4 +51,12 @@
   .tooltip:hover:after {
     opacity: 1;
   }
+
+  .scale-hover {
+    transition: all 0.5s ease-in-out;
+  }
+  .scale-hover:hover {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+  }
 }

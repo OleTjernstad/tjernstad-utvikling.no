@@ -124,8 +124,8 @@
   /* Backgrounds */
 
   --bg: var(--white-2);
-  --bg-1: var(--black-1);
-  --bg-2: var(--black-2);
+  --bg-1: var(--black-2);
+  --bg-2: var(--black-6);
   --bg-sheet: var(--white);
   --bg-footer: var(--teal-7);
 

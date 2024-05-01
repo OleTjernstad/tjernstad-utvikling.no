@@ -109,12 +109,12 @@
     }
   }
 
-  body:not(:has(.front-page)) {
+  /* body:not(:has(.front-page)) {
     background-image: url(/images/bg.svg);
     /* background-repeat: no-repeat; */
-    background-size: 100% auto;
-    /* background-position: center; */
-  }
+  /* background-size: 100% auto; */
+  /* background-position: center; */
+  /* } */
 
   p {
     padding-bottom: 0.9rem;

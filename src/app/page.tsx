@@ -2,7 +2,9 @@ import "@/styles/front-page.css";
 
 import { Header } from "@/components/header";
 import Image from "next/image";
+import { PostCard } from "@/components/post-card";
 import { ProjectCard } from "@/components/project-card";
+import { getAllPosts } from "@/utils/mdx";
 import { getAllProjects } from "@/utils/project-mdx";
 
 async function getProjects() {
@@ -10,9 +12,15 @@ async function getProjects() {
 
   return projects;
 }
+async function getPosts() {
+  const posts = getAllPosts();
+
+  return posts;
+}
 
 export default async function Home() {
   const projects = await getProjects();
+  const posts = await getPosts();
 
   return (
     <>
@@ -64,13 +72,24 @@ export default async function Home() {
           </section>
 
           {/* projects */}
-          <section>
+          <section className="project">
             <h2 className="title">Prosjekter</h2>
             <div className="post-wrapper">
               {projects
                 .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
                 .map((project) => (
                   <ProjectCard project={project} key={project.slug} />
+                ))}
+            </div>
+          </section>
+          {/* posts */}
+          <section className="post">
+            <h2 className="title">Posts</h2>
+            <div className="post-wrapper">
+              {posts
+                // .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+                .map((post) => (
+                  <PostCard post={post} key={post.slug} />
                 ))}
             </div>
           </section>

@@ -16,7 +16,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const tech = shuffle(project.frontmatter?.lang);
   return (
     <Link href={`projects/${project.slug}`}>
-      <article className="project">
+      <article className="project card-bg scale-hover">
         <div className="image-wrapper image-gradient">
           <Image
             width={200}
