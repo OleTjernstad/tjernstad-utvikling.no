@@ -86,6 +86,7 @@ export default async function Home() {
           <section className="post">
             <h2 className="title">Innlegg</h2>
             <div className="post-wrapper">
+              <div className="blank-post"></div>
               {posts
                 // .sort((a, b) => a.frontmatter.order - b.frontmatter.order)
                 .map((post) => (

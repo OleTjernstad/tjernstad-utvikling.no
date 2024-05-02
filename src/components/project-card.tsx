@@ -16,12 +16,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const tech = shuffle(project.frontmatter?.lang);
   return (
     <Link href={`projects/${project.slug}`}>
-      <article className="project card-bg scale-hover">
+      <article className="project card-bg scale-hover card-border-radius">
         <div className="image-wrapper image-gradient">
           <Image
             width={200}
             height={200}
-            className="image"
+            className="image card-border-radius-top"
             src={`/images/projects/${project.frontmatter.image}`}
             alt={`illustrasjonsbilde av ${project.frontmatter.title}`}
           />

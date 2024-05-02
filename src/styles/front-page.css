@@ -96,16 +96,18 @@
       flex-direction: row;
       padding: 20px;
 
-      padding-left: 200px;
-
       -ms-overflow-style: none; /* for Internet Explorer, Edge */
       scrollbar-width: none; /*  for Firefox */
       overflow-y: scroll;
 
+      .blank-post {
+        min-width: 180px;
+      }
+
       .post-card {
         margin: 5px 10px 5px -130px;
-        min-width: 300px;
-        min-height: 350px;
+        min-width: 200px;
+        min-height: 250px;
         box-shadow: -3rem 0 3rem -2rem #000;
         background: linear-gradient(85deg, var(--bg-2), var(--bg));
         transition: 0.2s;
@@ -116,6 +118,11 @@
 
         &:hover {
           transform: translateY(-1rem) rotate(3deg);
+        }
+
+        @media (width > 700px) {
+          min-width: 300px;
+          min-height: 350px;
         }
       }
 
@@ -156,7 +163,7 @@
     color: var(--blackish);
 
     background: linear-gradient(85deg, var(--bg-2), var(--bg));
-    box-shadow: -3rem 0 -3rem -2rem #000;
+    box-shadow: -3rem 0 3rem -2rem #000;
 
     .image-wrapper {
       aspect-ratio: 16 / 9;
@@ -182,6 +189,13 @@
 
   .card-bg {
     background: var(--bg-2);
+  }
+
+  .card-border-radius {
     border-radius: 5px;
+  }
+  .card-border-radius-top {
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 5px 5px 0 0;
   }
 }

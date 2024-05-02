@@ -18,13 +18,13 @@ interface PostCardProps {
 export function PostCard({ post }: PostCardProps) {
   const tech = shuffle(post.frontmatter?.tech ?? []);
   return (
-    <article className="post card-stack post-card">
+    <article className="post card-stack post-card card-border-radius">
       <Link href={`posts/${post.slug}`} className="">
         <div className="image-wrapper">
           <Image
             width={200}
             height={200}
-            className="image"
+            className="image card-border-radius-top"
             src={`/images/posts/${post.frontmatter?.image}`}
             alt={`illustrasjonsbilde av ${post.frontmatter?.title}`}
           />
