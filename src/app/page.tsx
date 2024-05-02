@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className="main-layout front-page">
+      <main className="main-layout">
         <div></div>
         <div>
           {/* me */}
@@ -84,7 +84,7 @@ export default async function Home() {
           </section>
           {/* posts */}
           <section className="post">
-            <h2 className="title">Posts</h2>
+            <h2 className="title">Innlegg</h2>
             <div className="post-wrapper">
               {posts
                 // .sort((a, b) => a.frontmatter.order - b.frontmatter.order)

@@ -31,7 +31,7 @@ export default async function Project({
   return (
     <>
       <Header imageName={project.frontmatter.image} path="/images/projects/" />
-      <main className="layout">
+      <main className="content-layout">
         <div className="content">
           <h2 className="title">{project.frontmatter?.title}</h2>
           <Component />

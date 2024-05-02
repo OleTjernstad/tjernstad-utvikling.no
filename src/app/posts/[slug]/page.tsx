@@ -27,7 +27,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <>
       <Header imageName={post.frontmatter.image} path="/images/posts/" />
-      <main className="layout">
+      <main className="content-layout">
         <div className="content">
           <h2 className="title">{post.frontmatter?.title}</h2>
           <Component />
