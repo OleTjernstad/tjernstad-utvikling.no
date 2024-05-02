@@ -30,12 +30,12 @@ export function PostCard({ post }: PostCardProps) {
           />
         </div>
         <div className="text-wrapper card-column">
-          <div className="flex-row gap-1">
+          <div className="date-row">
             <DateIcon />
             {format(post.frontmatter?.date, "dd.MM.yyyy")}
             {post.frontmatter?.update ? (
               <>
-                <span className="flex-row">
+                <span>
                   (<UpdateIcon />
                   {format(post.frontmatter?.update, "dd.MM.yyyy")})
                 </span>

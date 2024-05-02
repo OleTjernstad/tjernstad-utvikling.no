@@ -124,8 +124,26 @@
       }
     }
 
-    .post-wrapper::-webkit-scrollbar {
-      display: none; /* for Chrome, Safari, and Opera */
+    .card-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .date-row {
+      display: flex;
+      flex-direction: row;
+      gap: 0.4rem;
+
+      span {
+        display: flex;
+        flex-direction: row;
+        font-size: var(--font-size-xs);
+
+        svg {
+          height: var(--font-size-sm);
+          width: var(--font-size-sm);
+        }
+      }
     }
   }
 
