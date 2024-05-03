@@ -27,7 +27,7 @@ export default function RootLayout({
             <br /> 2116 Sander
           </address>
           <address>
-            Tlf: 483 13 283 <br />
+            Tlf: 988 57 810 <br />
             <br /> Org. nr. 924 359 595
           </address>
         </footer>

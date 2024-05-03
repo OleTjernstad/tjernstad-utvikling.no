@@ -1,5 +1,6 @@
 import { getAllPosts, getSinglePost } from "@/utils/mdx";
 
+import { Code } from "@/components/code";
 import { Header } from "@/components/header";
 import { Icon } from "@/components/icon";
 import { cache } from "react";
@@ -30,7 +31,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <main className="content-layout">
         <div className="content">
           <h2 className="title">{post.frontmatter?.title}</h2>
-          <Component />
+          <Component
+            components={{
+              Code,
+            }}
+          />
         </div>
         <div className="sidebar">
           <h2>Teknologier</h2>
