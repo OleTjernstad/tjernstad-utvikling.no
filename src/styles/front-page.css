@@ -134,6 +134,11 @@
     .card-column {
       display: flex;
       flex-direction: column;
+      height: 150px;
+
+      .tech-icons {
+        margin-block-start: auto;
+      }
     }
 
     .date-row {
@@ -141,9 +146,16 @@
       flex-direction: row;
       gap: 0.4rem;
 
-      span {
+      time {
         display: flex;
         flex-direction: row;
+
+        svg {
+          margin-right: 0.4rem;
+        }
+      }
+
+      .updated {
         font-size: var(--font-size-xs);
 
         svg {

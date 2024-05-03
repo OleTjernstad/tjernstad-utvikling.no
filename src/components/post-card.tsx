@@ -18,7 +18,7 @@ interface PostCardProps {
 export function PostCard({ post }: PostCardProps) {
   const tech = shuffle(post.frontmatter?.tech ?? []);
   return (
-    <article className="post card-stack post-card card-border-radius">
+    <article className="post card-stack post-card card-border-radius ">
       <Link href={`posts/${post.slug}`} className="">
         <div className="image-wrapper">
           <Image
@@ -31,18 +31,35 @@ export function PostCard({ post }: PostCardProps) {
         </div>
         <div className="text-wrapper card-column">
           <div className="date-row">
-            <DateIcon />
-            {format(post.frontmatter?.date, "dd.MM.yyyy")}
+            <time
+              dateTime={post.frontmatter?.date}
+              title={`Innlegget ble publisert første gang, ${format(
+                post.frontmatter?.date,
+                "dd.MM.yyyy"
+              )}`}
+            >
+              <DateIcon />
+              {format(post.frontmatter?.date, "dd.MM.yyyy")}
+            </time>
+
             {post.frontmatter?.update ? (
               <>
-                <span>
+                <time
+                  className="updated"
+                  dateTime={post.frontmatter?.date}
+                  title={`Innlegg er endret, ${format(
+                    post.frontmatter?.update,
+                    "dd.MM.yyyy"
+                  )}`}
+                >
                   (<UpdateIcon />
                   {format(post.frontmatter?.update, "dd.MM.yyyy")})
-                </span>
+                </time>
               </>
             ) : null}
           </div>
           <h3>{post.frontmatter.title}</h3>
+
           <div className="tech-icons">
             {tech
               ? tech

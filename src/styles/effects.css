@@ -4,7 +4,7 @@
     --tear-height: 10px;
     position: relative;
     color: black;
-    background: var(--bg-2);
+    background: var(--bg-1);
   }
 
   .tear::before,
