@@ -6,9 +6,14 @@ date: 2024-04-29
 update: 
 ---
 
-Hvordan jeg laget tooltip for teknologi ikonet til prosjek-kortet på forsiden til tjernstad-utvikling.no.
+Hvordan jeg laget tooltip for teknologi ikonet til prosjekt-kortet på forsiden til tjernstad-utvikling.no.
 
 I utgangspunktet ønsket jeg en ren CSS løsning, mest fordi jeg hadde lyst, og tenkte at det skulle være mulig. Etter et kjapt google søk fant jeg løsningen på [LogRockets blog](https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/)
 
+Trikset bak denne løsningen er å laste teksten til css content ved hjelp av:  ```attr(data-text);```.
 
-<Code language={'css'} filename={"tooltip-1.css"} />
+Et eksempel på html hvor man kan benytte denne tooltipen.
+<Code language={'html'} filename={"tooltip-1.html"} />
+
+Gjengivelse av min css. Med mine tilpassninger i forhold til LogoRockets sitt orginale eksempel
+<Code language={'css'} filename={"tooltip-2.css"} />

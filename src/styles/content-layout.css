@@ -5,9 +5,9 @@
     display: grid;
 
     grid-template:
-      [row1-start] ". content ." 500px [row1-end]
+      [row1-start] ". content ." [row1-end]
       [row2-start] ". sidebar ." [row2-end]
-      / 5px 1fr 5px;
+      / 14px auto 14px;
 
     @media (width > 700px) {
       grid-template:

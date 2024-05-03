@@ -1,5 +1,5 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { getCodeExample } from "@/utils/code";
 
 interface CodeProps {
@@ -9,7 +9,7 @@ interface CodeProps {
 export function Code({ filename, language }: CodeProps) {
   const codeString = getCodeExample(filename);
   return (
-    <SyntaxHighlighter language={language} style={a11yDark} showLineNumbers>
+    <SyntaxHighlighter language={language} style={atomDark} showLineNumbers>
       {codeString}
     </SyntaxHighlighter>
   );
