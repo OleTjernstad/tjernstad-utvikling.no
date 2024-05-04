@@ -31,21 +31,23 @@ export default async function Project({
   return (
     <>
       <Header imageName={project.frontmatter.image} path="/images/projects/" />
-      <main className="content-layout">
-        <div className="content">
-          <h2 className="title">{project.frontmatter?.title}</h2>
-          <Component />
-        </div>
-        <div className="sidebar">
-          <h2>Teknologier</h2>
+      <main>
+        <h2 className="title">{project.frontmatter?.title}</h2>
+        <div className="content-layout">
+          <div className="content">
+            <Component />
+          </div>
+          <div className="sidebar">
+            <h2>Teknologier</h2>
 
-          <ul>
-            {project.frontmatter?.lang?.map((lang: string) => (
-              <li key={lang}>
-                <Icon name={lang} key={lang} /> <span>{lang}</span>
-              </li>
-            ))}
-          </ul>
+            <ul>
+              {project.frontmatter?.lang?.map((lang: string) => (
+                <li key={lang}>
+                  <Icon name={lang} key={lang} /> <span>{lang}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </main>
     </>

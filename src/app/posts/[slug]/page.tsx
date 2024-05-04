@@ -28,25 +28,27 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <>
       <Header imageName={post.frontmatter.image} path="/images/posts/" />
-      <main className="content-layout">
-        <div className="content">
-          <h2 className="title">{post.frontmatter?.title}</h2>
-          <Component
-            components={{
-              Code,
-            }}
-          />
-        </div>
-        <div className="sidebar">
-          <h2>Teknologier</h2>
+      <main>
+        <h2 className="title">{post.frontmatter?.title}</h2>
+        <div className="content-layout">
+          <div className="content">
+            <Component
+              components={{
+                Code,
+              }}
+            />
+          </div>
+          <div className="sidebar">
+            <h2>Teknologier</h2>
 
-          <ul>
-            {post.frontmatter?.tech?.map((tech: string) => (
-              <li key={tech}>
-                <Icon name={tech} key={tech} /> <span>{tech}</span>
-              </li>
-            ))}
-          </ul>
+            <ul>
+              {post.frontmatter?.tech?.map((tech: string) => (
+                <li key={tech}>
+                  <Icon name={tech} key={tech} /> <span>{tech}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </main>
     </>
