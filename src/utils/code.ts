@@ -1,6 +1,4 @@
-import { bundleMDX } from "mdx-bundler";
 import fs from "fs";
-import matter from "gray-matter";
 import path from "path";
 
 export const ROOT = process.cwd();
