@@ -67,6 +67,7 @@ export default async function Home() {
                   Og viktigst, jeg er også pappa til ei nydelig jente, bare se
                   selv!!
                 </p>
+                <p className="text-white">Tester auto deploy to coolify</p>
               </article>
             </div>
           </section>
