@@ -6,7 +6,7 @@ import { Icon } from "@/components/icon";
 import { cache } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 
-export const revalidate = 3600 * 12; // revalidate every 12 hour
+export const revalidate = 43200; // revalidate every 12 hour
 
 export async function generateStaticParams() {
   const paths = getAllPosts().map(({ slug }) => ({
@@ -20,7 +20,10 @@ const getPost = cache(async (slug: string) => {
   return post;
 });
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export default async function Post(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
   const post = await getPost(params.slug);
 
   const Component = getMDXComponent(post.code);
