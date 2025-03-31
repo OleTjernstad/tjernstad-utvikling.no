@@ -60,4 +60,20 @@
     transform: scale(1.05);
     filter: brightness(0.8);
   }
+
+  code.language-bash {
+    display: block;
+    background-color: #2d2d2d; /* Dark background for bash commands */
+    color: #f8f8f2; /* Light text color */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    overflow-x: auto;
+  }
+
+  code.language-bash::before {
+    content: "$ ";
+    color: #8be9fd; /* Highlighted prompt color */
+  }
 }

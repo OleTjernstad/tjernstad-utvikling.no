@@ -1,0 +1,143 @@
+---
+title: Kort guide for hvordan sette opp en VPS
+image: usefull.png
+date: 2025-03-31
+---
+
+Her er en kort guide med kommandoer man må / eller kan bruke for å sette opp en VPS.
+
+Har fulgt video serien til syntax av CJ [https://syntax.fm/videos/self-host-101](https://syntax.fm/videos/self-host-101)
+
+### Koble til en server med ssh
+
+For å koble til serveren trenger du din favoritt terminal, og den offentlige IP adressen til serveren
+
+```bash
+ssh userName@serverIP
+``` 
+
+Om du ikke har satt opp SSH key login så vil du blir promptet for passordet. Ved første innlogging vil du få varsel om fingerprint. Dette varslet skal du kun se ved første innlogging, eller så vil det si at noe har forandret seg med serveren eller du er blitt utsatt for man in the middel.
+
+### Første handling
+
+Når man har logget seg på en ny server for første gang, og før man gjøre noe som helst annet, 
+må man oppgradere og oppdatere installerte pakker på serveren.
+
+Om man ikke har logget inn med *root* brukeren så må man starte kommandoene med sudo for å få tilgang.
+
+```bash
+apt update 
+``` 
+For å oppdatere pakke listene på serveren
+
+
+For å installere / oppgradere pakkene. I noen tilfeller kan må få beskjed om kernal oppdatering. Installer denne og gjenta upgrade kommandoen.
+
+
+Etter en oppdatering kan det være behov for en restart av serveren. Man kan sjekke behoved med følgende kommando
+```bash
+ls /var/run/reboot-required
+``` 
+Her sjekker man tilstedeværelse av filen reboot-required, eksisterer denne filen så restart serveren.
+En restart kan gjøres fra leverandørens dashboard (anbefales), eller med reboot kommando i terminalen.
+
+#### Endre passordet
+
+```bash
+passwd
+``` 
+Vil starte prosessen med å lage nytt passord
+
+#### Opprette en "non root user"
+
+Om man er usikker om din nåværende bruker har root privilligier kan man sjekke med følgende kommando der uid=0 er root bruker.
+
+```bash
+id
+```
+
+Opprett bruker
+```bash
+adduser nameofuser
+```
+så legge brukeren til gruppen sudo slik at de kan bruke sudo kommandoer
+```bash
+usermod -aG sudo nameoofuser
+```
+
+Se brukerens grupper
+```bash
+groups nameofuser
+```
+
+### Logg inn med SSH key
+
+#### Sette opp SSH key login
+
+SSH key login er en sikker metode for å logge inn på serveren uten å bruke passord. Følg disse stegene for å sette det opp:
+
+#### Generere en SSH nøkkel
+
+Benytter 1Password windows appen for å generere SSH nøkkler, på denne måten har jeg sikker lagring av nøkler å unngår å miste dem.
+Benytter også cli appen for å få tilgang til nøkkler i terminalen
+
+#### Kopiere nøkkelen til serveren
+
+Bruk `ssh-copy-id` for å kopiere den offentlige nøkkelen til serveren:
+
+```bash
+ssh-copy-id userName@serverIP
+```
+
+Du vil bli bedt om å oppgi passordet for serverbrukeren. Etter dette vil nøkkelen bli lagt til på serveren.
+
+#### Alternativ metode for å kopiere nøkkelen
+
+Hvis `ssh-copy-id` ikke er tilgjengelig, kan du manuelt kopiere nøkkelen. Først, vis innholdet av den offentlige nøkkelen på din lokale maskin:
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+Kopier utdataene og lim dem inn i filen `~/.ssh/authorized_keys` på serveren. Du kan bruke følgende kommando for å redigere filen på serveren:
+
+```bash
+nano ~/.ssh/authorized_keys
+```
+
+Lim inn nøkkelen, lagre og lukk filen.
+
+#### Teste SSH key login
+
+Logg inn på serveren igjen for å teste at nøkkelen fungerer:
+
+```bash
+ssh userName@serverIP
+```
+
+Hvis alt er satt opp riktig, vil du ikke bli bedt om passord.
+
+#### Deaktivere passordautentisering (valgfritt)
+
+For å øke sikkerheten kan du deaktivere passordautentisering. Rediger SSH-konfigurasjonsfilen på serveren:
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+Finn linjen som starter med `PasswordAuthentication` og endre den til:
+
+```bash
+PasswordAuthentication no
+```
+
+Start SSH-tjenesten på nytt for å bruke endringene:
+
+```bash
+sudo systemctl restart ssh
+```
+
+Nå kan du kun logge inn med SSH nøkkel.
+
+
+

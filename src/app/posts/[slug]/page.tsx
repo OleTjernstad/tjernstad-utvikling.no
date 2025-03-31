@@ -38,17 +38,19 @@ export default async function Post({ params }: { params: { slug: string } }) {
               }}
             />
           </div>
-          <div className="sidebar">
-            <h2>Teknologier</h2>
+          {post.frontmatter?.tech ? (
+            <div className="sidebar">
+              <h2>Teknologier</h2>
 
-            <ul>
-              {post.frontmatter?.tech?.map((tech: string) => (
-                <li key={tech}>
-                  <Icon name={tech} key={tech} /> <span>{tech}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <ul>
+                {post.frontmatter?.tech?.map((tech: string) => (
+                  <li key={tech}>
+                    <Icon name={tech} key={tech} /> <span>{tech}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </main>
     </>
