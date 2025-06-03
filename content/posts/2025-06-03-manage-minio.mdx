@@ -1,14 +1,14 @@
 ---
-title: How U manage my minio server
+title: How I manage my minio server
 image: terminal.png
 date: 2025-06-03
 ---
 
-# How to Manage Your MinIO Server
+## How to Manage Your MinIO Server
 
 This guide will walk you through installing the MinIO client, configuring your MinIO server, and managing access permissions.
 
-## 1. Install the MinIO Client
+### 1. Install the MinIO Client
 
 Download and install the MinIO client (`mc`):
 
@@ -25,7 +25,7 @@ export PATH=$PATH:$HOME/minio-binaries/
 
 ---
 
-## 2. Add Your MinIO Server to the Client
+### 2. Add Your MinIO Server to the Client
 
 Set up an alias for your MinIO server:
 
@@ -42,7 +42,7 @@ bash -o history
 
 ---
 
-## 3. Test the Configuration
+### 3. Test the Configuration
 
 Check your MinIO server status:
 
@@ -54,13 +54,13 @@ mc admin info <ALIAS>
 
 ---
 
-## 4. Useful MinIO Client Commands
+### 4. Useful MinIO Client Commands
 
 Find a list of all available commands here: [MinIO Client Commands](https://min.io/docs/minio/linux/reference/minio-mc.html#minio-mc-commands)
 
 ---
 
-## 5. Allow Anonymous Access to a Path
+### 5. Allow Anonymous Access to a Path
 
 To set anonymous access permissions for a bucket or a specific path, use one of the following commands:
 
