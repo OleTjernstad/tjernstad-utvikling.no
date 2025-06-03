@@ -1,0 +1,52 @@
+---
+title: How U manage my minio server
+image: terminal.png
+date: 2025-06-03
+---
+
+first install the minio client
+
+```bash
+curl https://dl.min.io/client/mc/release/linux-amd64/mc \
+  --create-dirs \
+  -o $HOME/minio-binaries/mc
+
+chmod +x $HOME/minio-binaries/mc
+export PATH=$PATH:$HOME/minio-binaries/
+```
+
+instructions here: https://min.io/docs/minio/linux/reference/minio-mc.html#install-mc
+
+
+then add the service to the mc configuration
+
+```bash
+bash +o history
+mc alias set ALIAS HOSTNAME ACCESS_KEY SECRET_KEY
+bash -o history
+```
+instructions here: https://min.io/docs/minio/linux/reference/minio-mc.html#create-an-alias-for-the-s3-compatible-service
+
+exit the shell to complete the installation
+
+then test the configuration
+
+```bash
+mc admin info myminio
+```
+instruction here: https://min.io/docs/minio/linux/reference/minio-mc.html#test-the-connection
+
+a list of all the commands here: https://min.io/docs/minio/linux/reference/minio-mc.html#minio-mc-commands
+
+
+to allow anonymos access to a PATH
+
+use one of these commands to set the access
+
+```bash
+mc anonymous set upload myminio/uploads
+mc anonymous set download myminio/downloads
+mc anonymous set public myminio/public
+```
+
+add /path after the bucket name to add the access to a spesific path
