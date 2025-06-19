@@ -1,0 +1,97 @@
+---
+title: How I set up backup from minio to Jottacloud with rclone
+image: terminal.png
+date: 2025-06-19
+---
+
+## Prerequisites
+
+Make sure you have access to both your MinIO server and a Jottacloud account.
+
+## Install rclone
+
+First, install rclone using the following command. For more information, see the [official rclone installation guide](https://rclone.org/install/).
+
+```bash
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+```
+
+## Configure rclone
+
+Run the configuration command:
+
+```bash
+rclone config
+```
+
+See the [official guide for setting up rclone and Jottacloud](https://rclone.org/jottacloud/).
+
+### Add Jottacloud Remote
+
+1. Choose `n` for a new remote.
+2. Enter a name for the remote, e.g., `jottacloud`.
+3. Select `Jottacloud` as the storage type.
+4. Leave client_id and client_secret blank.
+5. Select no for advanced config.
+
+Jottacloud has different options for authentication, based on your provider. I use the `jottacloud` provider.
+
+```bash
+Option config_type.
+Select authentication type.
+Choose a number from below, or type in an existing value of type string.
+Press Enter for the default (standard).
+   / Standard authentication.
+ 1 | Use this if you're a normal Jottacloud user.
+   \ (standard)
+   / Legacy authentication.
+ 2 | This is only required for certain whitelabel versions of Jottacloud and not recommended for normal users.
+   \ (legacy)
+   / Telia Cloud authentication.
+ 3 | Use this if you are using Telia Cloud (Sweden).
+   \ (telia_se)
+   / Telia Sky authentication.
+ 4 | Use this if you are using Telia Sky (Norway).
+   \ (telia_no)
+   / Tele2 Cloud authentication.
+ 5 | Use this if you are using Tele2 Cloud.
+   \ (tele2)
+   / Onlime Cloud authentication.
+ 6 | Use this if you are using Onlime Cloud.
+   \ (onlime)
+config_type> 1
+```
+
+- Follow the directions to create a new token and paste it in when prompted.
+- Select yes for using a non-sta device/mountpoint. Select default jotta.
+- Select Archive for the config-mountpoint.
+
+### Add MinIO Remote
+
+1. Run `rclone config` again.
+2. Choose `n` for a new remote.
+3. Enter a name for the remote, e.g., `minio`.
+4. Select **Amazon S3 Compliant Storage Providers** as the storage type.
+5. Select `MinIO` as the provider.
+6. Select 'Enter AWS credentials in the next step.' for adding the credentials in the prompt.
+7. Enter your MinIO access key and secret key.
+8. Enter a region, e.g., `us-east-1`.
+9. Enter the endpoint URL for your MinIO server, e.g., `http://minio`.
+10. Select the strictest ACL option for creating new buckets as convenient.
+11. Select no for advanced config.
+
+## Troubleshooting: Cloudflare Tunnel 403 Error
+
+If your MinIO server is behind a Cloudflare tunnel and you experience 403 errors, add the following option to your rclone command:
+
+```bash
+--s3-sign-accept-encoding=false
+```
+
+## Backup Command Example
+
+To back up a bucket from MinIO to Jottacloud, use the following command:
+
+```bash
+rclone sync minio:bucket jottacloud:backup --s3-sign-accept-encoding=false
+```
