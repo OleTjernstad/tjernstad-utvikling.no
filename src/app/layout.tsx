@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tjernstad Utvikling",
@@ -29,6 +30,11 @@ export default function RootLayout({
           <address>
             Tlf: 988 57 810 <br />
             <br /> Org. nr. 924 359 595
+            <br />
+            <br />
+            <Link className="a" href="/slett-konto">
+              Sletting av konto i Handl
+            </Link>
           </address>
         </footer>
       </body>
