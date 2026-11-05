@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-
 import { Header } from "@/components/header";
+import Link from "next/link";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Sletting av konto i Handl | Tjernstad Utvikling",
@@ -13,23 +12,9 @@ export default function DeleteAccount() {
     <>
       <Header />
       <main>
-        <h2 className="title">Sletting av konto i Handl</h2>
+        <h2 className="title">Sletting av konto i Handl-app</h2>
         <div className="content-layout">
           <div className="content">
-            <p>
-              Brukere kan be om å få deres bruker slettet ved å sende e-post til{" "}
-              <a href="mailto:delete@tjernstad-utvikling.no">
-                delete@tjernstad-utvikling.no
-              </a>{" "}
-              fra den e-postadressen kontoen er registrert på.
-            </p>
-            <p>
-              Om kravet om sletting kommer fra en annen e-postadresse, vil vi
-              etterpørre bekreftelse på den registrerte e-postadressen før
-              kontoen slettes. Dette gjør vi for å beskytte kontoen din mot at
-              andre ber om sletting på dine vegne.
-            </p>
-
             <h3>Slik ber du om sletting</h3>
             <p>
               Send en e-post til{" "}
@@ -39,6 +24,12 @@ export default function DeleteAccount() {
               fra e-postadressen som er registrert på Handl-kontoen din. Skriv
               gjerne hvilken konto det gjelder, slik at vi kan finne den raskt.
             </p>
+            <p>
+              Om kravet om sletting kommer fra en annen e-postadresse, vil vi
+              etterpørre bekreftelse på den registrerte e-postadressen før
+              kontoen slettes. Dette gjør vi for å beskytte kontoen din mot at
+              andre ber om sletting på dine vegne.
+            </p>
 
             <h3>Hva skjer når kontoen slettes?</h3>
             <p>
@@ -47,7 +38,7 @@ export default function DeleteAccount() {
               opplysningene lenger etter loven.
             </p>
             <p>
-              Les mer om hvilke opplysninger Handl lagrer i{" "}
+              Les mer om hvilke opplysninger Handl-app lagrer i{" "}
               <Link href="/privacy/handl-app">
                 personvernerklæringen for Handl
               </Link>
